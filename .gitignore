@@ -2,3 +2,8 @@
 node_modules
 bower_components
 .sass-cache
+public/css/vendor/normalize.css
+public/css/main.css
+public/css/main.css.map
+public/js/all.js
+js/app.js
