@@ -5,11 +5,17 @@ var uglify = require('gulp-uglify');
 var cssMinify = require('gulp-minify-css');
 var livereload = require('gulp-livereload');
 var notify = require('gulp-notify');
+var browserify = require('gulp-browserify');
+var gulputil = require('gulp-util');
+var concat = require('gulp-concat');
+var react = require('gulp-react');
+var rename = require('gulp-rename');
 
 var paths = {
-  scss: 'public/scss/main.scss',
+  scss: 'scss/main.scss',
   css: 'bower_components/normalize-css/normalize.css',
-  scripts: 'bower_components/jquery/jquery.js',
+  modules: ['js/main.js'],
+  scripts: ['js/app.js'],
   html: 'public/index.html'
 };
 
@@ -31,10 +37,20 @@ gulp.task('css', function () {
     .pipe(notify("css minified"));
 });
 
-gulp.task('scripts', function () {
+gulp.task('browserify', function () {
+  return gulp.src(paths.modules)
+    .pipe(react())
+    .pipe(browserify())
+    .pipe(rename("app.js"))
+    .pipe(gulp.dest('public/js'))
+    .pipe(notify("modules browserified"));
+});
+
+gulp.task('uglify', function () {
   return gulp.src(paths.scripts)
+    .pipe(concat('all.js'))
     .pipe(uglify())
-    .pipe(gulp.dest('public/js/vendor'))
+    .pipe(gulp.dest('public/js'))
     .pipe(notify("js uglified"));
 });
 
