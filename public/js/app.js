@@ -18989,7 +18989,7 @@ var FilterableProductTable = React.createClass({displayName: 'FilterableProductT
 
     render: function() {
         return (
-            React.DOM.div(null, 
+            React.DOM.div( {class:"main"}, 
                 SearchBar(
                     {filterText:this.state.filterText,
                     inStockOnly:this.state.inStockOnly,

@@ -54,6 +54,8 @@ gulp.task('uglify', function () {
     .pipe(notify("js uglified"));
 });
 
+gulp.task('scripts', ['browserify', 'uglify']);
+
 gulp.task('watch', function() {
   var server = livereload();
   gulp.watch(paths.scss, ['scss']).on('change', function (file) {
