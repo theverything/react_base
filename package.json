@@ -1,7 +1,7 @@
 {
-  "name": "",
+  "name": "react_base",
   "version": "0.0.1",
-  "description": "",
+  "description": "A starting point for a React project.",
   "main": "gulpfile.js",
   "dependencies": {
     "gulp": "~3.6.0",
@@ -27,6 +27,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "http-server ./public"
   },
-  "author": "",
+  "author": "theverything",
   "license": "MIT"
 }
