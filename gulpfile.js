@@ -14,8 +14,8 @@ var rename = require('gulp-rename');
 var paths = {
   scss: 'scss/main.scss',
   css: 'bower_components/normalize-css/normalize.css',
-  modules: ['js/main.js'],
-  scripts: ['js/app.js'],
+  modules: ['js/modules/main.js'],
+  scripts: ['bower_components/jquery/jquery.js','js/app.js'],
   html: 'public/index.html'
 };
 
@@ -37,16 +37,17 @@ gulp.task('css', function () {
     .pipe(notify("css minified"));
 });
 
-gulp.task('browserify', function () {
+gulp.task('browserify', function (cb) {
   return gulp.src(paths.modules)
     .pipe(react())
     .pipe(browserify())
     .pipe(rename("app.js"))
-    .pipe(gulp.dest('public/js'))
+    .pipe(gulp.dest('js'))
     .pipe(notify("modules browserified"));
+    cb(err);
 });
 
-gulp.task('uglify', function () {
+gulp.task('uglify', ['browserify'], function () {
   return gulp.src(paths.scripts)
     .pipe(concat('all.js'))
     .pipe(uglify())

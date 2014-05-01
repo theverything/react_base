@@ -18888,7 +18888,7 @@ module.exports = warning;
 },{}],2:[function(require,module,exports){
 /** @jsx React.DOM */
 
-var React = require('../bower_components/react/react-with-addons');
+var React = require('../../bower_components/react/react-with-addons');
 
 var ProductCategoryRow = React.createClass({displayName: 'ProductCategoryRow',
     render: function() {
@@ -18989,7 +18989,7 @@ var FilterableProductTable = React.createClass({displayName: 'FilterableProductT
 
     render: function() {
         return (
-            React.DOM.div( {class:"main"}, 
+            React.DOM.div(null, 
                 SearchBar(
                     {filterText:this.state.filterText,
                     inStockOnly:this.state.inStockOnly,
@@ -19017,4 +19017,4 @@ var PRODUCTS = [
 
 React.renderComponent(FilterableProductTable( {products:PRODUCTS} ), document.body);
 
-},{"../bower_components/react/react-with-addons":1}]},{},[2])
+},{"../../bower_components/react/react-with-addons":1}]},{},[2])

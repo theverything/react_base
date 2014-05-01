@@ -1,6 +1,6 @@
 /** @jsx React.DOM */
 
-var React = require('../bower_components/react/react-with-addons');
+var React = require('../../bower_components/react/react-with-addons');
 
 var ProductCategoryRow = React.createClass({
     render: function() {
@@ -101,7 +101,7 @@ var FilterableProductTable = React.createClass({
 
     render: function() {
         return (
-            <div class="main">
+            <div>
                 <SearchBar
                     filterText={this.state.filterText}
                     inStockOnly={this.state.inStockOnly}
