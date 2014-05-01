@@ -1,5 +1,7 @@
+You need to have sass installed `gem install sass`
+
 Run `npm install` and `bower install`.
 
-To compile assets run `gulp`.
+Compile and watch assets run `gulp`.
 
 And to view the project in your browser use `npm start`.
