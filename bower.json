@@ -15,6 +15,7 @@
   ],
   "dependencies": {
     "jquery": "1.9.1",
-    "normalize-css": "~3.0.1"
+    "normalize-css": "~3.0.1",
+    "react": "~0.10.0"
   }
 }
