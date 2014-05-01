@@ -3,3 +3,14 @@
 @import 'bitters/bitters';
 
 $border-box-sizing: true;
+
+body {
+  padding: 20px;
+}
+
+.main {
+  border: solid 1px #000;
+  padding: 20px;
+  @include span-columns(2);
+  @include omega();
+}
