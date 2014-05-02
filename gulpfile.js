@@ -39,9 +39,8 @@ gulp.task('css', function () {
 
 gulp.task('browserify', function (cb) {
   return gulp.src(paths.modules)
-    .pipe(browserify({
-      transform: ['reactify']
-    }))
+    .pipe(react())
+    .pipe(browserify())
     .pipe(rename("app.js"))
     .pipe(gulp.dest('js'))
     .pipe(notify("modules browserified"));
