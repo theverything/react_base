@@ -1,4 +1,6 @@
-You need to have sass installed `gem install sass`
+# React + jQuery + Browserify + Bourbon/Neat
+
+You need to have sass installed `gem install sass`.
 
 Run `npm install` and `bower install`.
 
