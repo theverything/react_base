@@ -39,9 +39,10 @@ gulp.task('css', function () {
 
 gulp.task('browserify', function (cb) {
   return gulp.src(paths.modules)
-    .pipe(react())
-    .pipe(browserify())
-    .pipe(rename("app.js"))
+    .pipe(browserify({
+      transform: ["reactify"]
+    }))
+    .pipe(rename('app.js'))
     .pipe(gulp.dest('js'))
     .pipe(notify("modules browserified"));
     cb(err);
@@ -60,6 +61,9 @@ gulp.task('scripts', ['browserify', 'uglify']);
 gulp.task('watch', function() {
   var server = livereload();
   gulp.watch(paths.scss, ['scss']).on('change', function (file) {
+    server.changed(file.path);
+  });
+  gulp.watch('./js/modules/**/*.js', ['scripts']).on('change', function (file) {
     server.changed(file.path);
   });
   gulp.watch(paths.html).on('change', function (file) {
