@@ -9,8 +9,6 @@ body {
 }
 
 .main {
-  border: solid 1px #000;
-  padding: 20px;
   @include span-columns(2);
   @include omega();
 }
