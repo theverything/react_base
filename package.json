@@ -4,9 +4,13 @@
   "description": "A starting point for a React project.",
   "main": "gulpfile.js",
   "dependencies": {
+    "bower": "^1.3.3",
+    "envify": "^1.2.1",
+    "express": "^4.2.0",
     "gulp": "~3.6.0",
     "http-server": "~0.6.1",
-    "bower": "^1.3.3"
+    "react": "^0.10.0",
+    "serve-index": "^1.0.2"
   },
   "devDependencies": {
     "gulp": "~3.6.0",
@@ -26,7 +30,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "http-server ./public"
+    "start": "node ./js/server/server.js"
   },
   "author": "theverything",
   "license": "MIT"
