@@ -51,7 +51,7 @@ gulp.task('browserify', function (cb) {
 gulp.task('uglify', ['browserify'], function () {
   return gulp.src(paths.scripts)
     .pipe(concat('all.js'))
-    //.pipe(uglify())
+    .pipe(uglify())
     .pipe(gulp.dest('public/js'))
     .pipe(notify("js uglified"));
 });
